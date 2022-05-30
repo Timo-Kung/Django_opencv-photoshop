@@ -1,0 +1,120 @@
+{% extends "base.html" %} {% load crispy_forms_tags %} {% block content %}
+<div class="mt-3">
+  <div id="alert-box"></div>
+  <div id="img-box"></div>
+  <form id="p-form" autocomplete="off">
+    {% csrf_token %} {{form|crispy}}
+    <div id="btn-box" class="not-visible mt-1 mb-3">
+      <h3>Color Space Conversion</h3>
+      <br />
+      <button type="submit" class="btn btn-primary" data-filter="NO_FILTER">
+        NO_FILTER
+      </button>
+      <button type="submit" class="btn btn-primary" data-filter="GRAY">
+        GRAY
+      </button>
+      <button type="submit" class="btn btn-primary" data-filter="XYZ">
+        XYZ
+      </button>
+      <button type="submit" class="btn btn-primary" data-filter="YCrCb">
+        YCrCb
+      </button>
+      <button type="submit" class="btn btn-primary" data-filter="HSV">
+        HSV
+      </button>
+      <button type="submit" class="btn btn-primary" data-filter="HLS">
+        HLS
+      </button>
+      <button type="submit" class="btn btn-primary" data-filter="CIElab">
+        CIElab
+      </button>
+      <button type="submit" class="btn btn-primary" data-filter="CIEluv">
+        CIEluv
+      </button>
+
+      <h3>Threshold processing</h3>
+      <br />
+      <button type="submit" class="btn btn-primary" data-filter="BINARY">
+        BINARY
+      </button>
+      <button type="submit" class="btn btn-primary" data-filter="BINARY_INV">
+        BINARY_INV
+      </button>
+      <button type="submit" class="btn btn-primary" data-filter="TRUNC">
+        TRUNC
+      </button>
+      <button type="submit" class="btn btn-primary" data-filter="TOZERO">
+        TOZERO
+      </button>
+      <button type="submit" class="btn btn-primary" data-filter="TOZERO_INV">
+        TOZERO_INV
+      </button>
+      <button type="submit" class="btn btn-primary" data-filter="OTSU">
+        OTSU
+      </button>
+
+      <h3>Smooth processing</h3>
+      <br />
+      <button type="submit" class="btn btn-primary" data-filter="BLURRED">
+        BLURRED
+      </button>
+      <button type="submit" class="btn btn-primary" data-filter="BOX_FILTER">
+        BOX_FILTER
+      </button>
+      <button type="submit" class="btn btn-primary" data-filter="GAUSSIANBLUR">
+        GAUSSIANBLUR
+      </button>
+      <button type="submit" class="btn btn-primary" data-filter="MEDIANBLUR">
+        MEDIANBLUR
+      </button>
+      <button
+        type="submit"
+        class="btn btn-primary"
+        data-filter="BILATERALFILTER"
+      >
+        BILATERALFILTER
+      </button>
+
+      <h3>Morphological processing</h3>
+      <br />
+      <button type="submit" class="btn btn-primary" data-filter="EROSION">
+        EROSION
+      </button>
+      <button type="submit" class="btn btn-primary" data-filter="DILATION">
+        DILATION
+      </button>
+      <button type="submit" class="btn btn-primary" data-filter="MORPH_OPEN">
+        MORPH_OPEN
+      </button>
+      <button type="submit" class="btn btn-primary" data-filter="MORPH_CLOSE">
+        MORPH_CLOSE
+      </button>
+      <button type="submit" class="btn btn-primary" data-filter="MORPH_TOPHAT">
+        MORPH_TOPHAT
+      </button>
+      <button
+        type="submit"
+        class="btn btn-primary"
+        data-filter="MORPH_BLACKHAT"
+      >
+        MORPH_BLACKHAT
+      </button>
+
+      <h3>Image Gradient</h3>
+      <br />
+      <button type="submit" class="btn btn-primary" data-filter="SOBEL">
+        SOBEL
+      </button>
+      <button type="submit" class="btn btn-primary" data-filter="SCHARR">
+        SCHARR
+      </button>
+      <button type="submit" class="btn btn-primary" data-filter="LAPLACIAN">
+        LAPLACIAN
+      </button>
+      <button type="submit" class="btn btn-primary" data-filter="CANNY">
+        CANNY
+      </button>
+    </div>
+  </form>
+</div>
+{% endblock content %}
